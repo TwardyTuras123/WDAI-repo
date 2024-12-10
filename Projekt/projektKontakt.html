@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bananowa Fantazja</title>
+
+    <style>
+
+        #backgroundFollow{
+            position: fixed;
+            width: 90vw;
+            height: 100vh;
+            opacity: 0.05;
+            right: 0;
+            display: block;
+            transform: scaleX(-1);
+            pointer-events: none;
+        }
+
+        #navButton {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 10vw;
+            height: 10vw;
+            background-color: rgb(210, 67, 226);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        #line {
+            width: 80%;
+            height: 10%;
+            background-color: rgb(15, 14, 14);
+            margin: 5% 0;
+        }
+
+        #navbar {
+            display: none;
+            position: fixed;
+            top: 10vw;
+            right: 0;
+            background-color: rgb(183, 178, 183);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        #navbar button {
+            width: 100%;
+            padding: 10px;
+            background-color: #800080;
+            border: none;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #navbar button:hover {
+            background-color: #A72D83;
+        }
+
+
+        #test {
+            background-color: blue;
+            border: solid, yellow, 5px;
+            width: 1000%;
+            height: auto;
+        }
+
+        body {
+            background: hsla(52, 95%, 61%, 1);
+            background: linear-gradient(135deg, hsla(52, 95%, 61%, 1) 20%, hsla(318, 58%, 42%, 1) 100%);
+            background: -moz-linear-gradient(135deg, hsla(52, 95%, 61%, 1) 20%, hsla(318, 58%, 42%, 1) 100%);
+            background: -webkit-linear-gradient(135deg, hsla(52, 95%, 61%, 1) 20%, hsla(318, 58%, 42%, 1) 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FAE03B", endColorstr="#A72D83", GradientType=1 );
+
+            cursor: url('BananaImg/banancursor.png'), auto;
+            padding: 1vw;
+        }
+
+        #wrapper {
+
+
+            width:100%;
+            position:relative;
+            overflow:hidden;
+        }
+
+        #main-container {
+            background-color: #800080;
+            width:100%;
+            overflow:hidden;
+            margin-bottom: 3vh;
+
+        }
+
+        header {
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+
+
+
+        main {
+            display: flex;
+            align-items: flex-start;
+            gap: 3;
+            padding-bottom: 3vh;
+        }
+
+        #main-photo {
+            display: none;
+            transform: scaleX(-1);
+        }
+
+        article {
+            padding: 2vw;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #800080;
+            color: white;
+            text-align: center;
+        }
+
+        #contactContainer {
+            background-color: #800080;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 50vw;
+            height: auto;
+        }
+
+        #contactContainer label {
+            display: block;
+            font-family: Arial, sans-serif;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        #contactContainer input[type="text"],
+        #contactContainer select,
+        #contactContainer textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+
+        #contactContainer input[type="submit"] {
+            background-color: #eaf822;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10%;
+            cursor: pointer;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #contactContainer input[type="submit"]:hover {
+            background-color: #829e27;
+        }
+
+
+        @media only screen and (min-width: 1000px) {
+
+
+
+            #navbar {
+                top: 5vw;
+            }
+
+            #navButton {
+                width: 5vw;
+                height: 5vw;
+            }
+
+
+        }
+
+    </style>
+</head>
+<body>
+
+    </div>
+    <div id="wrapper">
+        <img src="BananaImg/bananaman.png" alt="..." id="backgroundFollow">
+
+        <div id="main-container">
+            <button id="navButton">
+                <div id="line"></div>
+                <div id="line"></div>
+                <div id="line"></div>
+            </button>
+            <nav id="navbar">
+                <button onclick="window.location.href='home.html'">Dom</button>
+                <button onclick="window.location.href='projektGaleria.html'">Galeria</button>
+                <button onclick="window.location.href='projektKontakt.html'">Kontakt</button>
+            </nav>
+            <header><h1>BANANOWA FANTAZJA</h1></header>
+        </div>
+
+
+        <div id="contactContainer">
+            <form id="contactForm" action="#" method="POST">
+                <label for="email">E-Mail:</label>
+                <input 
+                    type="text" 
+                    id="email" 
+                    name="email" 
+                    placeholder="Wpisz tu swój mail..." 
+                    required>
+                <br><br>
+                
+                <label for="subject">Temat wiadomości:</label>
+                <select id="subject" name="subject" required>
+                    <option value="report">Nadużycie</option>
+                    <option value="support">Problem ze stroną</option>
+                    <option value="feedback">Opinia</option>
+                    <option value="goodfun">Za dużo zabawy</option>
+                </select>
+                <br><br>
+                
+                <label for="message">Wiadomość:</label>
+                <textarea 
+                    id="message" 
+                    name="message" 
+                    placeholder="Napisz nam swoją wiadomość..." 
+                    rows="5" 
+                    required></textarea>
+                <br><br>
+                
+                <input type="submit" value="Wyślij">
+            </form>
+        </div>
+
+
+
+        <footer>Damian Chłus</footer>
+    </div>
+
+
+
+
+
+    <script>
+
+
+
+        const navButton = document.getElementById("navButton");
+        const navbar = document.getElementById("navbar");
+
+        navButton.addEventListener("click", () => {
+            if (navbar.style.display === "none" || navbar.style.display === "") {
+                navbar.style.display = "block";
+            } else {
+                navbar.style.display = "none";
+            }
+        });
+
+        window.addEventListener("click", (event) => {
+            if (!navButton.contains(event.target) && !navbar.contains(event.target)) {
+                navbar.style.display = "none";
+            }
+        });
+
+
+
+
+        function bmanFlip() {
+            const bman = document.getElementById('backgroundFollow');
+            const currentTransform = bman.style.transform;
+            if (currentTransform === 'scaleX(-1)') {
+                bman.style.transform = 'scaleX(1)';
+            } else {
+                bman.style.transform = 'scaleX(-1)';
+            }
+        }
+
+        setInterval(bmanFlip, 500);
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bananowa Fantazja</title>
+
+    <style>
+
+        #backgroundFollow{
+            position: fixed;
+            width: 90vw;
+            height: 100vh;
+            opacity: 0.05;
+            right: 0;
+            display: block;
+            transform: scaleX(-1);
+            pointer-events: none;
+        }
+
+        #navButton {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 10vw;
+            height: 10vw;
+            background-color: rgb(210, 67, 226);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        #line {
+            width: 80%;
+            height: 10%;
+            background-color: rgb(15, 14, 14);
+            margin: 5% 0;
+        }
+
+        #navbar {
+            display: none;
+            position: fixed;
+            top: 10vw;
+            right: 0;
+            background-color: rgb(183, 178, 183);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        #navbar button {
+            width: 100%;
+            padding: 10px;
+            background-color: #800080;
+            border: none;
+            color: white;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            cursor: pointer;
+        }
+
+        #navbar button:hover {
+            background-color: #A72D83;
+        }
+
+
+        #test {
+            background-color: blue;
+            border: solid, yellow, 5px;
+            width: 1000%;
+            height: auto;
+        }
+
+        body {
+            background: hsla(52, 95%, 61%, 1);
+            background: linear-gradient(135deg, hsla(52, 95%, 61%, 1) 20%, hsla(318, 58%, 42%, 1) 100%);
+            background: -moz-linear-gradient(135deg, hsla(52, 95%, 61%, 1) 20%, hsla(318, 58%, 42%, 1) 100%);
+            background: -webkit-linear-gradient(135deg, hsla(52, 95%, 61%, 1) 20%, hsla(318, 58%, 42%, 1) 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FAE03B", endColorstr="#A72D83", GradientType=1 );
+
+            cursor: url('BananaImg/banancursor.png'), auto;
+            padding: 1vw;
+        }
+
+        #wrapper {
+
+
+            width:100%;
+            position:relative;
+            overflow:hidden;
+        }
+
+        #main-container {
+            background-color: #800080;
+            width:100%;
+            overflow:hidden;
+            margin-bottom: 3vh;
+
+        }
+
+
+        header {
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+
+        #galleryContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+            height: auto;
+            min-height: 30vh;
+            padding-bottom: 3vh;
+        }
+
+        #thumbnails {
+            display: flex;
+            flex-direction: row; 
+            flex-wrap: wrap; 
+            gap: 10px;
+            width: 100%;
+            max-height: 80vh; 
+            overflow: auto; 
+        }
+
+        #thumbnails img,
+        #thumbnails video {
+            width: 28vw;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            transition: border-color 0.2s;
+        }
+
+        #thumbnails img:hover,
+        #thumbnails video:hover {
+            border-color: #800080;
+        }
+
+        #display {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c07fbd;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        #display img,
+        #display video {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 8px;
+        }
+
+        #photo {
+            width: 20%;
+            height: auto;
+
+        }
+
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #800080;
+            color: white;
+            text-align: center;
+        }
+
+        @media only screen and (min-width: 1000px) {
+
+            #navbar {
+                top: 5vw;
+            }
+
+            #navButton {
+                width: 5vw;
+                height: 5vw;
+            }
+
+            #galleryContainer {
+                width: 50vw;
+                min-height: 50vh;
+                float: inline-end;
+                justify-self: center;
+            }
+
+            #thumbnails {
+                padding-left: 5%;
+                width: 40vw;
+            }
+
+            #thumbnails img,
+            #thumbnails video {
+                width: 10vw;
+                border: 2px solid transparent;
+                border-radius: 8px;
+                transition: border-color 0.2s;
+            }
+
+
+
+
+
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+    </div>
+    <div id="wrapper">
+        <img src="BananaImg/bananaman.png" alt="..." id="backgroundFollow">
+
+        <div id="main-container">
+            <button id="navButton">
+                <div id="line"></div>
+                <div id="line"></div>
+                <div id="line"></div>
+            </button>
+            <nav id="navbar">
+                <button onclick="window.location.href='home.html'">Dom</button>
+                <button onclick="window.location.href='projektGaleria.html'">Galeria</button>
+                <button onclick="window.location.href='projektKontakt.html'">Kontakt</button>
+            </nav>
+            <header><h1>BANANOWA FANTAZJA</h1></header>
+        </div>
+
+        <div id="galleryContainer">
+
+        
+            <div id="display">
+                <img id="displayImage" src="" alt="Selected" style="display: none;">
+                <video id="displayVideo" controls style="display: none;">
+                    <source id="displayVideoSource" src="" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        
+        <div id="thumbnails">
+            <img src="BananaImg/banan1.jpg" alt="Thumbnail 1" class="thumbnail" data-type="photo" data-src="BananaImg/banan1.jpg", id="photo">
+            <img src="BananaImg/banan2.jpg" alt="Thumbnail 2" class="thumbnail" data-type="photo" data-src="BananaImg/banan2.jpg", id="photo">
+            <img src="BananaImg/banan3.jpg" alt="Thumbnail 3" class="thumbnail" data-type="photo" data-src="BananaImg/banan3.jpg", id="photo">
+            <img src="BananaImg/banan4.jpg" alt="Thumbnail 4" class="thumbnail" data-type="photo" data-src="BananaImg/banan4.jpg", id="photo">
+            <img src="BananaImg/banan5.jpg" alt="Thumbnail 5" class="thumbnail" data-type="photo" data-src="BananaImg/banan5.jpg", id="photo">
+            <img src="BananaImg/banan6.jpg" alt="Thumbnail 6" class="thumbnail" data-type="photo" data-src="BananaImg/banan6.jpg", id="photo">
+            <img src="BananaImg/banan7.jpg" alt="Thumbnail 7" class="thumbnail" data-type="photo" data-src="BananaImg/banan7.jpg", id="photo">
+            <img src="BananaImg/banan8.png" alt="Thumbnail 8" class="thumbnail" data-type="photo" data-src="BananaImg/banan8.png", id="photo">
+            <img src="BananaImg/banan9.jpg" alt="Thumbnail 9" class="thumbnail" data-type="photo" data-src="BananaImg/banan9.jpg", id="photo">
+            <img src="BananaImg/banan10.jpg" alt="Thumbnail 10" class="thumbnail" data-type="photo" data-src="BananaImg/banan10.jpg", id="photo">
+            <img src="BananaImg/banan11.jpg" alt="Thumbnail 11" class="thumbnail" data-type="photo" data-src="BananaImg/banan11.jpg", id="photo">
+            <img src="BananaImg/banan12.jpg" alt="Thumbnail 12" class="thumbnail" data-type="photo" data-src="BananaImg/banan12.jpg", id="photo">
+            <img src="BananaImg/banan13.jpg" alt="Thumbnail 13" class="thumbnail" data-type="photo" data-src="BananaImg/banan13.jpg", id="photo">
+            <img src="BananaImg/cursor-banana.png" alt="Thumbnail 14" class="thumbnail" data-type="photo" data-src="BananaImg/cursor-banana.png", id="photo">
+            <video class="thumbnail" data-type="video" data-src="BananaImg/bananavid1.mp4">
+                <source src="BananaImg/bananavid1.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+
+        <footer>Damian Chłus</footer>
+    </div>
+
+
+
+
+    <script>
+
+
+
+        const navButton = document.getElementById("navButton");
+        const navbar = document.getElementById("navbar");
+
+        navButton.addEventListener("click", () => {
+            if (navbar.style.display === "none" || navbar.style.display === "") {
+                navbar.style.display = "block";
+            } else {
+                navbar.style.display = "none";
+            }
+        });
+
+        window.addEventListener("click", (event) => {
+            if (!navButton.contains(event.target) && !navbar.contains(event.target)) {
+                navbar.style.display = "none";
+            }
+        });
+
+
+
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const displayImage = document.getElementById('displayImage');
+        const displayVideo = document.getElementById('displayVideo');
+        const displayVideoSource = document.getElementById('displayVideoSource');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                const type = thumbnail.getAttribute('data-type');
+                const src = thumbnail.getAttribute('data-src');
+
+                if (type === 'photo') {
+                    displayImage.src = src;
+                    displayImage.style.display = 'block';
+                    displayVideo.style.display = 'none';
+                } else if (type === 'video') {
+                    displayVideoSource.src = src;
+                    displayVideo.load(); 
+                    displayVideo.style.display = 'block';
+                    displayImage.style.display = 'none';
+                }
+            });
+        });
+
+
+
+
+        function bmanFlip() {
+            const bman = document.getElementById('backgroundFollow');
+            const currentTransform = bman.style.transform;
+            if (currentTransform === 'scaleX(-1)') {
+                bman.style.transform = 'scaleX(1)';
+            } else {
+                bman.style.transform = 'scaleX(-1)';
+            }
+        }
+
+        setInterval(bmanFlip, 500);
+
+
+
+    </script>
+
+</body>
+</html>
